@@ -23,12 +23,22 @@ class App extends Component {
     this.setState({contacts: [...this.state.contacts, contact]})
   }
 
+  toggleBestFriend = (id) => {
+    const copiedContacts = [...this.state.contacts]
+    copiedContacts.forEach(contact => {
+      if(contact.id === id) {
+        contact.bestFriend = !contact.bestFriend
+      }
+    })
+    this.setState({contacts: copiedContacts});
+  }
+
   render() {
     return (
       <main className="App">
         <h1>Contact List</h1>
         <Form addContact={this.addContact}/>
-        <ContactList contacts={this.state.contacts}/>
+        <ContactList contacts={this.state.contacts} toggleBestFriend={this.toggleBestFriend}/>
       </main>
     )
   }
