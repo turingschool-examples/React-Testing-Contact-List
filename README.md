@@ -1,6 +1,6 @@
 # React Testing Practice: Contact Form
 
-This is a practice repo for writign tests with React Testing Library. The it blocks are all filled out, all you have to do it write the tests! 
+This is a practice repo for writing tests with React Testing Library. The it blocks are all filled out, all you have to do it write the tests! 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
