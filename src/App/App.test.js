@@ -2,8 +2,20 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App', () => {
+  it('Should render a heading', () => {
+
+  });
+
+  it('Should be able to add a contact', () => {
+
+  });
+
+  it('should be able to add and then favorite a contact', () => {
+
+  });
+
+  it('should be able to add then remove a contact', () => {
+
+  });
 });

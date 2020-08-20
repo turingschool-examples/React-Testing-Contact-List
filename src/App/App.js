@@ -9,8 +9,8 @@ class App extends Component {
     this.state = {
       contacts: [
         {
-          name: "Khalid",
-          number: 5555555,
+          name: "Courage",
+          number: 5556694373,
           bestFriend: true,
           id: 1
         }
