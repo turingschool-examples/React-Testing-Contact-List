@@ -33,12 +33,21 @@ class App extends Component {
     this.setState({contacts: copiedContacts});
   }
 
+  deleteContact = (id) => {
+    const newContacts = this.state.contacts.filter(contact => contact.id !== id);
+    this.setState({contacts: newContacts});
+  }
+
   render() {
     return (
       <main className="App">
         <h1>Contact List</h1>
         <Form addContact={this.addContact}/>
-        <ContactList contacts={this.state.contacts} toggleBestFriend={this.toggleBestFriend}/>
+        <ContactList 
+          contacts={this.state.contacts} 
+          toggleBestFriend={this.toggleBestFriend}
+          deleteContact={this.deleteContact}
+        />
       </main>
     )
   }
