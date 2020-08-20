@@ -25,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <main className="App">
         <h1>Contact List</h1>
         <Form addContact={this.addContact}/>
         <ContactList contacts={this.state.contacts}/>
