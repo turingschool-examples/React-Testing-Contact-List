@@ -1,0 +1,4 @@
+.ContactList {
+  display: flex;
+  flex-wrap: wrap;
+}
