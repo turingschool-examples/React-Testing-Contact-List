@@ -20,7 +20,7 @@ const ContactList = ({contacts, toggleBestFriend, deleteContact}) => {
   
   return (
     <section className="ContactList">
-      {contactCards}
+      {contactCards.length ? contactCards : <h3>No Contacts Yet!</h3>}
     </section>
   )
 }
