@@ -19,7 +19,7 @@ export default ContactCard;
 
 ContactCard.propTypes = {
   name: propTypes.string,
-  number: propTypes.number,
+  number: propTypes.string,
   bestFriend: propTypes.bool,
   id: propTypes.number
 }
