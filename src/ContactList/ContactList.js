@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 import './ContactList.css';
 
 const ContactList = ({contacts, toggleBestFriend, deleteContact}) => {
+  console.log(contacts);
 
   const contactCards = contacts.map((contact, i) => {
     const { name, id, number, bestFriend } = contact;

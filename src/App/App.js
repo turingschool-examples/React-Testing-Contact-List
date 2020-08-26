@@ -2,25 +2,30 @@ import React, { Component } from 'react';
 import './App.css';
 import ContactList from '../ContactList/ContactList';
 import Form from '../Form/Form';
+import { getContacts, postContact } from '../helpers/apiCalls';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      contacts: [
-        {
-          name: 'Courage',
-          number: '5556694373',
-          bestFriend: true,
-          id: 1
-        }
-      ]
+      contacts: []
     }
   }
 
+  componentDidMount() {
+    getContacts()
+      .then(contacts => this.setState({contacts: contacts.contacts}))
+      .catch(error => console.error(error))
+  }
+
   addContact = (contact) => {
-    contact.id = Date.now()
-    this.setState({contacts: [...this.state.contacts, contact]})
+    console.log(contact)
+    postContact(contact)
+      .then(data => this.setState({contacts: [...this.state.contacts, data.newContact]}))
+      .catch((error) => {
+        console.error(error);
+      })
+    
   }
 
   toggleBestFriend = (id) => {

@@ -23,7 +23,9 @@ You can either clone down the repo, or use a codesandobx template.
 5. For mocking practice, checkout the `mocking-practice` branch
 
 ### CodeSandbox
-1. Make a fork of [this sandbox](https://codesandbox.io/s/github/turingschool-examples/React-Testing-Contact-List/tree/main).
+1. Make a fork of one of these sandboxes: 
+  - [regular testing sandbox](https://codesandbox.io/s/github/turingschool-examples/React-Testing-Contact-List/tree/main).
+  - [mocking testing sandbox](https://codesandbox.io/s/github/turingschool-examples/React-Testing-Contact-List/tree/mocking-practice).
 2. To see and run tests, click the `Tests` tab above the in-sandbox-browser's url bar
 
 ## Available Scripts
