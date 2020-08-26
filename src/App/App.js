@@ -40,12 +40,10 @@ class App extends Component {
     this.setState({contacts: copiedContacts});
   }
 
-  removeContact = (id) => {
+  removeContact = async (id) => {
     //const newContacts = this.state.contacts.filter(contact => contact.id !== id);
-    deleteContact(id)
-      .then(resolvedValue => {
-        this.getAllContacts();
-      });
+    await deleteContact(id)
+    this.getAllContacts();
 
     //this.setState({contacts: newContacts});
   }
@@ -61,7 +59,7 @@ class App extends Component {
         <ContactList 
           contacts={this.state.contacts} 
           toggleBestFriend={this.toggleBestFriend}
-          removeContact={this.deleteContact}
+          removeContact={this.removeContact}
         />
       </main>
     )

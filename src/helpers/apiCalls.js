@@ -21,9 +21,7 @@ export const getContacts = () => {
 }
 
 export const postContact = (newContact) => {
-  console.log(newContact);
   const stringifiedContact = JSON.stringify(newContact);
-  console.log(stringifiedContact);
   return fetch(`${baseURL}/contacts`, {
     method: 'POST',
     headers: {
@@ -38,5 +36,11 @@ export const deleteContact = (id) => {
   return fetch(`${baseURL}/contacts/${id}`, {
     method: 'DELETE',
   })
-    .then(responseChecker)
+    .then(response => {
+      if (response.ok) {
+        return;
+      } else {
+        throw new Error (response.statusText);
+      }
+    })
 };
