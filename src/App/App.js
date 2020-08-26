@@ -41,11 +41,8 @@ class App extends Component {
   }
 
   removeContact = async (id) => {
-    //const newContacts = this.state.contacts.filter(contact => contact.id !== id);
     await deleteContact(id)
     this.getAllContacts();
-
-    //this.setState({contacts: newContacts});
   }
 
   componentDidMount() {
