@@ -27,7 +27,7 @@ export const postContact = (newContact) => {
   return fetch(`${baseURL}/contacts`, {
     method: 'POST',
     headers: {
-      ContentType: 'application/json'
+      'Content-Type': 'application/json'
     },
     body: stringifiedContact
   })
