@@ -20,6 +20,7 @@ You can either clone down the repo, or use a codesandobx template.
 2. `cd` into the the new directory
 3. Run `npm install` to install depenedencies
 4. Run one of the following scripts for local development or testing:
+5. For mocking practice, checkout the `mocking-practice` branch
 
 ### CodeSandbox
 1. Make a fork of [this sandbox](https://codesandbox.io/s/github/turingschool-examples/React-Testing-Contact-List/tree/main).
