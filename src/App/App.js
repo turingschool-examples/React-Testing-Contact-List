@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ContactList from '../ContactList/ContactList';
 import Form from '../Form/Form';
-import { getContacts, postContact } from '../helpers/apiCalls';
+import { getContacts, postContact, deleteContact } from '../helpers/apiCalls';
 
 class App extends Component {
   constructor() {
@@ -12,10 +12,12 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+
+  getAllContacts = () => {
     getContacts()
       .then(contacts => this.setState({contacts: contacts.contacts}))
       .catch(error => console.error(error))
+
   }
 
   addContact = (contact) => {
@@ -38,11 +40,19 @@ class App extends Component {
     this.setState({contacts: copiedContacts});
   }
 
-  deleteContact = (id) => {
-    const newContacts = this.state.contacts.filter(contact => contact.id !== id);
-    this.setState({contacts: newContacts});
+  removeContact = (id) => {
+    //const newContacts = this.state.contacts.filter(contact => contact.id !== id);
+    deleteContact(id)
+      .then(resolvedValue => {
+        this.getAllContacts();
+      });
+
+    //this.setState({contacts: newContacts});
   }
 
+  componentDidMount() {
+    this.getAllContacts();
+  }
   render() {
     return (
       <main className="App">
@@ -51,7 +61,7 @@ class App extends Component {
         <ContactList 
           contacts={this.state.contacts} 
           toggleBestFriend={this.toggleBestFriend}
-          deleteContact={this.deleteContact}
+          removeContact={this.deleteContact}
         />
       </main>
     )

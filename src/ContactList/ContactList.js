@@ -3,7 +3,7 @@ import ContactCard from '../ContactCard/ContactCard';
 import propTypes from 'prop-types';
 import './ContactList.css';
 
-const ContactList = ({contacts, toggleBestFriend, deleteContact}) => {
+const ContactList = ({contacts, toggleBestFriend, removeContact}) => {
   console.log(contacts);
 
   const contactCards = contacts.map((contact, i) => {
@@ -15,7 +15,7 @@ const ContactList = ({contacts, toggleBestFriend, deleteContact}) => {
       number={number} 
       bestFriend={bestFriend} 
       toggleBestFriend={toggleBestFriend}
-      deleteContact={deleteContact}
+      removeContact={removeContact}
     />
   })
   
@@ -29,5 +29,7 @@ const ContactList = ({contacts, toggleBestFriend, deleteContact}) => {
 export default ContactList;
 
 ContactList.propTypes = {
-  contacts: propTypes.array
+  contacts: propTypes.array,
+  removeContact: propTypes.func,
+  toggleBestFriend: propTypes.func
 }

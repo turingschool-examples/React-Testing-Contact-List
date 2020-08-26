@@ -21,12 +21,15 @@ export const getContacts = () => {
 }
 
 export const postContact = (newContact) => {
+  console.log(newContact);
+  const stringifiedContact = JSON.stringify(newContact);
+  console.log(stringifiedContact);
   return fetch(`${baseURL}/contacts`, {
     method: 'POST',
     headers: {
       ContentType: 'application/json'
     },
-    body: JSON.stringify(newContact)
+    body: stringifiedContact
   })
     .then(responseChecker)
 }
