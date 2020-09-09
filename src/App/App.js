@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import ContactList from '../ContactList/ContactList';
 import Form from '../Form/Form';
-import { getContacts, postContact, deleteContact } from '../helpers/apiCalls';
+import { getContacts, postContact, deleteContact, patchFavorite } from '../helpers/apiCalls';
 
 class App extends Component {
   constructor() {
@@ -31,14 +31,27 @@ class App extends Component {
   }
 
   toggleBestFriend = (id) => {
-    const copiedContacts = [...this.state.contacts]
-    copiedContacts.forEach(contact => {
-      if(contact.id === id) {
-        contact.bestFriend = !contact.bestFriend
-      }
-    })
-    this.setState({contacts: copiedContacts});
-  }
+    //const copiedContacts = [...this.state.contacts]
+    //copiedContacts.forEach(contact => {
+    //  if(contact.id === id) {
+    //    contact.bestFriend = !contact.bestFriend
+    //  }
+    //})
+    patchFavorite(id)
+      .then(data => {
+        const copiedContacts = this.state.contacts.map(contact => {
+          if (contact.id === id) {
+            return data.updatedContact;
+          } else {
+            return contact;
+          }
+        });
+        this.setState({contacts: copiedContacts});
+      })
+      .catch( error => {
+        console.error(error);
+      });
+    }
 
   removeContact = async (id) => {
     await deleteContact(id)

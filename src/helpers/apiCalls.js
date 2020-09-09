@@ -44,3 +44,16 @@ export const deleteContact = (id) => {
       }
     })
 };
+
+export const patchFavorite = (id) => {
+  return fetch(`${baseURL}/contacts/${id}`, {
+    method: 'PATCH',
+  })
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw res.json();
+      }
+    })
+};
