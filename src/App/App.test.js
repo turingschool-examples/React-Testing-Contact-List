@@ -10,12 +10,6 @@ describe('App', () => {
 
   })
 
-  it('Should be able to add a contact', () => {
-    // What functions do we need to mock here?
-    // How many times will each mocked function get called?
-
-  });
-
 
   it('should be able to add and then remove a contact', () => {
     // What functions do we need to mock here?
