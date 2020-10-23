@@ -26,6 +26,11 @@ You can either clone down the repo, or use a codesandobx template.
 1. Make a fork of [this sandbox](https://codesandbox.io/s/github/turingschool-examples/React-Testing-Contact-List/tree/main).
 2. To see and run tests, click the `Tests` tab above the in-sandbox-browser's url bar
 
+### Async testing practice
+- To practice async testing with this repo, after cloning it down run:
+1 `git fetch --all`
+2. `git checkout async-testing-practice` 
+
 ## Available Scripts
 
 In the project directory, you can run:
